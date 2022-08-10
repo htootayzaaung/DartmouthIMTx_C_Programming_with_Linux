@@ -1,0 +1,104 @@
+program: program.o weatherstats.o
+        gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.o weatherstats.o -o program
+
+program.o: program.c weatherstats.h
+        gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+
+weatherstats.o: weatherstats.c
+        gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o  
+
+clean:
+        rm *.o
+
+********
+Targets:
+********
+
+_an executable (i.e "program")
+
+_".o files" (i.e "program.o", "weatherstats.o")
+
+_on the other side of ":", there are dependencies ".c" and ".h" files to create an ".o"
+file for example.
+
+******
+Flags:
+******
+
+"-std=c11", "-Wall", "-fmax-errors=10", "-Wextra" and so on...
+
+
+************
+Annotations:
+************
+
+______________________________________________________________________________________
+program: program.o weatherstats.o
+        gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.o weatherstats.o -o program
+______________________________________________________________________________________
+
+_there is exactly one "TAB" after "targets": "dependecies" line and there is a single 
+"SPACE" character betweeen each dependencies. This applies to other targets in this 
+makefile.
+_this is the "linking" process!
+_"program" is the name of an executable
+______________________________________________________________________________________
+program.o: program.c weatherstats.h
+        gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c program.c -o program.o
+______________________________________________________________________________________
+
+_before building an executable ".o" files needs to be created.
+_"program.o" depends upon "program.c" and "weatherstats.h"
+_"-c" flag is used to just translate "program.c" into a "program.o" which is in 
+machine language.This applies to "weatherstats.o" as well.
+
+______________________________________________________________________________________
+weatherstats.o: weatherstats.c
+        gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o
+______________________________________________________________________________________
+
+_"weatherstats.o" does not depends on any ".h" files, therefore it is just sufficient
+with "weatherstats.c" to create "weatherstats.o" which is its machine language version.
+
+*********
+Warnings:
+*********
+
+_____________________________________________________________________________________________________
+clang: warning: argument unused during compilation: '-fmax-errors=10' [-Wunused-command-line-argument]
+gcc -std=c11 -Wall -fmax-errors=10 -Wextra -c weatherstats.c -o weatherstats.o 
+clang: warning: argument unused during compilation: '-fmax-errors=10' [-Wunused-command-line-argument]
+gcc -std=c11 -Wall -fmax-errors=10 -Wextra program.o weatherstats.o -o program 
+clang: warning: argument unused during compilation: '-fmax-errors=10' [-Wunused-command-line-argument]
+_____________________________________________________________________________________________________
+
+_The following "warnings" will be shown provided that your application program has successfully
+completed the build process without errors at a first attempt. Congratulations!
+
+*******************
+Deleting ".o" files
+*******************
+
+______________
+clean:
+        rm *.o
+______________
+
+
+Ways to delete ".o" files after build-process via Terminal:
+
+type: "make clean"
+
+type: "rm *.o"
+
+
+
+
+
+
+
+
+
+
+
+   

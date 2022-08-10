@@ -1,0 +1,31 @@
+********************
+Purpose of makefiles
+********************
+
+The purpose of a "makefile" is to automate the building proccess of the executable programs.
+
+With a "makefile":
+
+_there is no need for seperately compiling each ".c" files into ".o" files
+one at a time.
+
+_there is no need for linking each ".o" files to the final executable
+
+The need to type all these commands and the compiler flags causes complete nuisance. With
+a "makefile" such inconveniences are irradicated, at least it simplifies the build process.
+
+
+***********************
+Makefiles terminoligies
+***********************
+
+target: what is needed to be produced (an executable, .o files)
+
+flags: "-std=c11", "-Wall", "-fmax-errors=10", "-Wextra" and so on...
+
+dependencies: files that a target depends upon
+
+
+
+
+

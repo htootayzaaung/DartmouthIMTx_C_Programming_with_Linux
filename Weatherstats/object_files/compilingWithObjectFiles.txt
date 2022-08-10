@@ -1,0 +1,27 @@
+1.) Type: "gcc -Wall -c -o program.o program.c"
+    This will create an object file name "program.o"
+
+Similarly:
+
+2.) Type: "gcc -Wall -c -o weatherstats.o weatherstats.c"
+    This will create an object file name "weatherstats.o"
+
+"program.o" and "weatherstats.o" are not executable independently.
+"-c" option is used to tell the compiler that we just want to translate these programs into machine-code.
+
+Finally we have to bundle "program.o" and "weatherstats.o" to make sure that they are executable.
+
+3.) Type: "gcc -Wall -o program program.o weatherstats.o" 
+
+Here, the executable name is supposed to be called as "program".
+"-c" option is excluded beacause we want to link everything together.
+
+Type: "./program" once the executable file "program" has been produced and you may now notice that the program executes successfully.
+
+4.) Type: "rm *.o"
+
+Since, we have already obtained the executable there is no use for us to store the individual ".o" files in the directory.
+Therefore, we can discard them by typing the above command. Re-run the program by typing "./program", you may now notice that the program 
+runs in the same fashion regardless of the absence ".o" files in the directory provided that you have not modified the original code.
+
+
