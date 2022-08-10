@@ -1,0 +1,8 @@
+__________________
+launch: program
+        ./program
+__________________
+
+This launches the executable upon typing "make launch" in terminal.
+As before, typing "make clean" will remove the object files (i.e ".o" 
+files).
