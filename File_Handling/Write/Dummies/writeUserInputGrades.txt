@@ -1,0 +1,8 @@
+Num1: 1
+Num2: 2
+Num3: 3
+Num4: 4
+__________________________________________________________
+_If the file did not exist previously, it will be created. 
+_If the file already exist, it will be overwritten.
+__________________________________________________________
